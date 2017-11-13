@@ -111,3 +111,38 @@
 	  }
  }
  
+ void affichuntempspar(structure*t[], int n ) //une fonction Rechercher et afficher les données pour un temps particulier
+ { int tp,tms=0,i=0;
+    printf("veuillez donnez un temps particulier :");
+	scanf("%d",&tp);
+	do {
+		tms=tms+t[i]->temps;
+		i++;
+	   }while(tp<=tms);
+	 printf("le pouls dans %d ms est de \n\t : %d",tp,t[i]->frequencecard);  
+}
+  
+  void affichnbdelincsv (int n) //une fonction Afficher le nombre de lignes de données actuellement en mémoire
+  { printf("le nombre de ligne est de \n\t :%d",n);
+  }
+  void affichermin (structure*t[], int n)   //Rechercher et afficher les min de pouls (avec le temps associé)
+  { int min,tmin,i=0;
+    min=t[0]->frequencecard;
+    for(i=1;i<n;i++)
+    {if (t[i]->frequencecard<min) 
+        min=t[i]->frequencecard;
+        tmin=t[i]->temps;
+	}
+	printf("le min de pouls est de \n\t :%d \nson temps est \n\t :%d",min,tmin);
+  }
+  void affichermax (structure*t[], int n)   //Rechercher et afficher les max de pouls (avec le temps associé)
+  { int max,tmax,i=0;
+    max=t[0]->frequencecard;
+    for(i=1;i<n;i++)
+    {if (t[i]->frequencecard>max) 
+        max=t[i]->frequencecard;
+        tmax=t[i]->temps;
+	}
+	printf("le min de pouls est de \n\t :%d \nson temps est \n\t :%d",max,tmax);
+  }
+ 

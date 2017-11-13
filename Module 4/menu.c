@@ -49,7 +49,7 @@ switch (choix)
 	 	break;
 			
 	 case 7:
-	 	printf("\n\n\n\\t\t\tnvous aller quitter le prgramme \n\n\n\n");
+	 	printf("\n\n\n\\t\t\t vous allez quitter le prgramme \n\n\n\n");
 	 	for (r=1;r<=1;r++) 
 		 { // pour gagner du temps avant la fermmiture du programme 
             for (q=0;q<=800000000;q++);
