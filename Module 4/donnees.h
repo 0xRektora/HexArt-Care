@@ -1,9 +1,8 @@
-typedef
-struct
+typedef struct structure structure;
+struct structure
 { 
- 
-  float temps;
-  int frequencecard;
+   float temps;
+   int frequencecard;
 
-}freq;
-
+};
+void remplissagetab (structure *t[], FILE *f);
