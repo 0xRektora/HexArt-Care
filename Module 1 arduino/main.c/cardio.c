@@ -9,8 +9,8 @@ void recolte(int *pouls, int digitalI)
 
 }
 
-// fonction qui calcul le temps démarrage du programme, reçoit un pointeur vers la variable du temps en paramètre
-void calcul(int *temps)
+// fonction qui calcule le temps démarrage du programme, reçoit un pointeur vers la variable du temps en paramètre
+void calcule(int *temps)
 {
   *temps = millis();
 
