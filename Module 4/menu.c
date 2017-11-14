@@ -1,10 +1,15 @@
 #include "menu.h"
-
+#include "action.h"
 int affichermenu()
 {   int choix;
      	system("color C");
+<<<<<<< HEAD
 	   do
 	 {  
+=======
+	  
+	do {  
+>>>>>>> 8b9bae27ce69aeb1471fde086e2d8bd93520fcf6
 	 	printf("%n ** vous devez choisir l'option que vous voulez faire **\n\n"); //choix d'operation 
 	    printf ("\n\n");
         printf ("\t\t************************************\n");
@@ -25,8 +30,13 @@ int affichermenu()
             scanf("%d",&choix);
 	
     
+<<<<<<< HEAD
 	 }while(choix >=7 || choix<=1);
 	 return choix;
+=======
+	 } while(choix>=7 && choix<=1);
+	return choix;
+>>>>>>> 8b9bae27ce69aeb1471fde086e2d8bd93520fcf6
 
 }
 
@@ -35,6 +45,7 @@ void choixmenu (int choix)
 switch (choix)
  {
 	case 1:
+		 afficherdordf(structure t[], int n);
 	   break;
 	case 2:
        break;
