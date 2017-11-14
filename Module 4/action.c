@@ -34,10 +34,35 @@
 	  }
  }
  
+ void affichpotdo(int *pp, structure t[] ) // cette foction elle est manquante !!!!!!
+ { int tmin,tmax,k,tms=0;
+   printf("veuilliez limiter votre interval \n\t temps du debut de calcule \n\t :");
+   scanf("%d",&tmin);
+   printf("\n\t temps de la fin du calcul \n\t :");
+   scanf("%d",&tmax);
+  do {
+		tms=tms+t[i].temps;
+		i++;
+		k=i;
+	   }while(tmin<=tms);
+	   i=0;
+	  
+  do {
+		tms=tms+t[i].temps;
+		i++;
+		r=i;
+	   }while(tmax<=tms);
+	w=0;
+	for(i=k;i<r;i++)
+	{ somme =some+t[i].frequencecard;
+	   w++;
+	}  
+	  moy=somme/w;
+	  
+ }
  
- 
- 
- void affichordredecroistemp(structure *t[], int n) // Afficher les données en ordre decroissant selon le temps
+  
+  void affichordredecroistemp(structure *t[], int n) // Afficher les données en ordre decroissant selon le temps
  { int i,q,temp;
    for(i=0;i<n;i++)
    {

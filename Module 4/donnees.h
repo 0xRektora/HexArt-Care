@@ -1,13 +1,20 @@
+
+#ifndef DONNEES_H
+#define DONNEES_H
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
+#define BUFFER_SIZE 1024  //Taille du buffer
 
-typedef struct structure structure;
-struct structure;
+typedef struct structure
 { 
-   int temps;
-   int frequencecard;
+ 
+  int temps;
+  int frequencecard;
 
-};
+}structure;
 
-void remplissagetab (structure *t[], FILE *f,int *n);
+void remplissagetab(structure tab[]);
+
+#endif

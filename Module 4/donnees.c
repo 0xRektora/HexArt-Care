@@ -1,18 +1,15 @@
-#include <stdio.h>
-#include <stdlib.h>
-# define BUFFER_SIZE 1024 
 #include "donnees.h"
-void remplissagetab (structure *tab[],  int *n)
-{  
-char buffer[1024] ;
+
+void remplissagetab( structure *tab)
+{
+   char buffer[1024] ;
    char *record,*line;
-   int q,x,i=0;
-   
-   FILE *fstream = fopen("test.csv","r");
-   if(fstream == NULL)
+   int q, x, i=0, n=0;
+   FILE *fstream = fopen("test.csv", "r");
+   if(fstream == NULL) 
    {
       printf("\n file opening failed ");
-      return -1 ;
+      
    }
    while((line=fgets(buffer,sizeof(buffer),fstream))!=NULL)
    {
@@ -25,14 +22,15 @@ char buffer[1024] ;
         printf("%d|",tab[i].frequencecard);
      }
      ++i ;
-     *n++;
+     n++;
 
    }
    fclose(fstream);
-   fstream = fopen("test.csv","r");
+   fstream = fopen("test.csv", "r");
+   i=0;
    printf("\n\n\n");
    while((line=fgets(buffer,sizeof(buffer),fstream))!=NULL)
-   { i=0;
+   { 
      record = strtok(line,";");
      while(record != NULL)
      { 
@@ -44,8 +42,7 @@ char buffer[1024] ;
      }
      i++;
      
-
-   }
-  
-    
 }
+fclose(fstream);
+}
+

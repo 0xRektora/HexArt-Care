@@ -5,19 +5,15 @@
 
 
 int main(int argc, char *argv[]) {
-	 structure t[20];
-	 int n,i;
-	 
-	  
-remplissagetab (structure *t[], FILE *fstream, &n);
-affichermenu();
+	 structure tab[10];
+	 int n=0,choix1;
+      remplissagetab(tab);
+      choix1=affichermenu();
 
 
 
-  for(i=0;i<n;i++)
-{ printf("%d"t[i].frequencecard)
-}
 
-	
+
+
 	return 0;
 }
