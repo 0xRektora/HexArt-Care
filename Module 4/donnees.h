@@ -14,7 +14,6 @@ typedef struct structure
   int frequencecard;
 
 }structure;
-
-void remplissagetab(structure tab[]);
+ void remptab (structure tab[], int *n);
 
 #endif
