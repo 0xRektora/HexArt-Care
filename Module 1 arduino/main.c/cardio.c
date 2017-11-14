@@ -3,14 +3,22 @@
 #include <Arduino.h>
 
 // fonction qui récolte les données du pouls à partir de l'E/S analogique, reçoit un pointeur vers la variable du pouls et l'entrée digital en paramètre
-void recolte(int *pouls, int digitalI)
+void recolte(int *pouls, int analogIn)
 {
-  *pouls = digitalRead(digitalI);
-
+  *pouls = analogRead(analogIn);
+  /*if (analogRead(analogIn) !=1023)
+  {
+    *pouls=0;
+  }
+  else
+  {
+    *pouls = 1;
+  }
+  */
 }
 
 // fonction qui calcule le temps démarrage du programme, reçoit un pointeur vers la variable du temps en paramètre
-void calcule(int *temps)
+void calcule(long int *temps)
 {
   *temps = millis();
 
