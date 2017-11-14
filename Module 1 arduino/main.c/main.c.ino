@@ -10,25 +10,25 @@ Version 0.1
 
 int pouls = 0;
 int temps = 0; // temps en ms calculé depuis le démarrage du programme arduino
-int digitalI = 13; // entrée digital arduino utilisé pour récupérer les données
+int digitalI = 13; // entrée digitale arduino utilisée pour récupérer les données
  
-//Variable utilisé
+//Variables utilisées
 
 
-//Main setup, déclaration variable / constantes 
+//Main setup, déclaration variables / constantes 
 void setup() {
     Serial.begin(9600);
     pinMode(digitalI, INPUT);
 }
 
-//Main program, récupération et envoie des données 
+//Main program, récupération et envoi de données 
 void loop() {
-  calcul(&temps);
+  calcule(&temps);
   recolte(&pouls, digitalI);
   Serial.println(pouls);
-  delay(1);
+  delay(2);
   Serial.println(temps);
-  delay(1);
+  delay(2);
   
 
 }
