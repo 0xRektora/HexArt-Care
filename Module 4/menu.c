@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "menu.h"
-
+#include "action.h"
 int affichermenu()
 {   int choix;
      	system("color C");
-	   while(choix>=7 && choix<=1)
-	 {  
+	  
+	do {  
 	 	printf("%n ** vous devez choisir l'option que vous voulez faire **\n\n"); //choix d'operation 
 	    printf ("\n\n");
         printf ("\t\t************************************\n");
@@ -27,8 +27,8 @@ int affichermenu()
             scanf("%d",&choix);
 	
     
-	 }
-	 return choix;
+	 } while(choix>=7 && choix<=1);
+	return choix;
 
 }
 
@@ -38,6 +38,7 @@ void choixmenu (int choix)
 switch (choix)
  {
 	case 1:
+		 afficherdordf(structure t[], int n);
 	   break;
 	case 2:
        break;

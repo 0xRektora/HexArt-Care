@@ -1,7 +1,4 @@
-#ifndef menu_h
-#define menu_h
+#include "action.h"
 int affichermenu();
-
-#endif
 
 

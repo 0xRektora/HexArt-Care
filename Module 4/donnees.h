@@ -1,12 +1,13 @@
-#ifndef donnes_h
-#define donnees_h
+#include <stdio.h>
+#include <stdlib.h>
 
 
 typedef struct structure structure;
-struct structure
+struct structure;
 { 
-   float temps;
+   int temps;
    int frequencecard;
 
 };
-void remplissagetab (structure *t[], FILE *f);
+
+void remplissagetab (structure *t[], FILE *f,int *n);
