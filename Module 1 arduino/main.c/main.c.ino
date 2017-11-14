@@ -8,27 +8,33 @@ Version 0.1
 
 //Variables utilisé
 
-int pouls = 0;
-int temps = 0; // temps en ms calculé depuis le démarrage du programme arduino
-int digitalI = 13; // entrée digitale arduino utilisée pour récupérer les données
+int pouls = 100;
+long int temps = 0; // temps en ms calculé depuis le démarrage du programme arduino
+String data = ""; //Données à envoyer
+int analogIn = 0; // entrée digitale arduino utilisée pour récupérer les données
  
 //Variables utilisées
 
 
 //Main setup, déclaration variables / constantes 
 void setup() {
-    Serial.begin(9600);
-    pinMode(digitalI, INPUT);
+    Serial.begin(115200);
+    
 }
 
 //Main program, récupération et envoi de données 
 void loop() {
-  calcule(&temps);
-  recolte(&pouls, digitalI);
-  Serial.println(pouls);
-  delay(2);
-  Serial.println(temps);
-  delay(2);
+  recolte(&pouls, analogIn);
+  //calcule(&temps);
+  //data = (String)pouls;
+  //data += ';';
+  //data += (String)temps;
+  Serial.write( 0xff );                                                         
+  Serial.write( (pouls>> 8) & 0xff );                                            
+  Serial.write( pouls & 0xff );
+  
+  //Serial.println(data);
+  //delay(1000);
   
 
 }
