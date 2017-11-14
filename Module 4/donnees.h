@@ -1,3 +1,7 @@
+#ifndef donnes_h
+#define donnees_h
+
+
 typedef struct structure structure;
 struct structure
 { 

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "donnees.h"
- void afficherdordf(structure t[], int n)
+ void afficherdordf(structure t[], int n) // Afficher les données dans l’ordre du fichier .csv
  { int i;
      printf(" \tLE TEMPS | LE POULS \n");
  	for(i=0;i<n;i++)
@@ -11,7 +11,7 @@
  
  
  
- void affichdordrecroistemps(structure *t[], int n)
+ void affichdordrecroistemps(structure *t[], int n) // Afficher les données en ordre croissant selon le temps
  { int i,q,temp;
    for(i=0;i<n;i++)
    {
@@ -37,7 +37,7 @@
  
  
  
- void affichordredecroistemp(structure *t[], int n)
+ void affichordredecroistemp(structure *t[], int n) // Afficher les données en ordre decroissant selon le temps
  { int i,q,temp;
    for(i=0;i<n;i++)
    {
@@ -62,7 +62,7 @@
  
  
  
- void affichdordrecroispouls(structure *t[], int n)
+ void affichdordrecroispouls(structure *t[], int n) // Afficher les données en ordre croissant selon le pouls
  { int i,q,temp;
    for(i=0;i<n;i++)
    {
@@ -88,7 +88,7 @@
  
  
  
- void affichordredecroispouls(structure *t[], int n)
+ void affichordredecroispouls(structure *t[], int n) // Afficher les données en ordre decroissant selon le pouls
  { int i,q,temp;
    for(i=0;i<n;i++)
    {
@@ -135,6 +135,8 @@
 	}
 	printf("le min de pouls est de \n\t :%d \nson temps est \n\t :%d",min,tmin);
   }
+  
+  
   void affichermax (structure*t[], int n)   //Rechercher et afficher les max de pouls (avec le temps associé)
   { int max,tmax,i=0;
     max=t[0]->frequencecard;

@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "menu.h"
 
 
 
 int main(int argc, char *argv[]) {
 
-
+affichermenu();
 	
 	return 0;
 }
