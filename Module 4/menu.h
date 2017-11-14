@@ -1,7 +1,9 @@
-#ifndef menu_h
-#define menu_h
+#ifndef MENU_H
+#define MENU_H
+
+#include <stdio.h>
+#include <stdlib.h>
 int affichermenu();
 
+
 #endif
-
-

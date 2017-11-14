@@ -1,23 +1,21 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "menu.h"
 
 int affichermenu()
 {   int choix;
      	system("color C");
-	   while(choix>=7 && choix<=1)
+	   do
 	 {  
 	 	printf("%n ** vous devez choisir l'option que vous voulez faire **\n\n"); //choix d'operation 
 	    printf ("\n\n");
         printf ("\t\t************************************\n");
         printf ("\t\t**\n");
-        printf ("\t\t** 1 ..Afficher les données dans l’ordre du fichier .csv \n");
-        printf ("\t\t** 2 ..Afficher les données en ordre croissant/décroissant (selon le temps, selon le pouls)    \n");
-        printf ("\t\t** 3 ..Rechercher et afficher les données pour un temps particulier\n");
-        printf ("\t\t** 4 ..Afficher la moyenne de pouls dans une plage de temps donnée\n");
-        printf ("\t\t** 5 ..Afficher le nombre de lignes de données actuellement en mémoire\n");
-        printf ("\t\t** 6 ..Rechercher et afficher les max/min de pouls (avec le temps associé)\n");
-        printf ("\t\t** 7 ..Quitter l’application\n");
+        printf ("\t\t** 1 ..Afficher les donnï¿½es dans lï¿½ordre du fichier .csv \n");
+        printf ("\t\t** 2 ..Afficher les donnï¿½es en ordre croissant/dï¿½croissant (selon le temps, selon le pouls)    \n");
+        printf ("\t\t** 3 ..Rechercher et afficher les donnï¿½es pour un temps particulier\n");
+        printf ("\t\t** 4 ..Afficher la moyenne de pouls dans une plage de temps donnï¿½e\n");
+        printf ("\t\t** 5 ..Afficher le nombre de lignes de donnï¿½es actuellement en mï¿½moire\n");
+        printf ("\t\t** 6 ..Rechercher et afficher les max/min de pouls (avec le temps associï¿½)\n");
+        printf ("\t\t** 7 ..Quitter lï¿½application\n");
     
         printf ("\t\t**\n");
         printf ("\t\t************************************\n");
@@ -27,13 +25,12 @@ int affichermenu()
             scanf("%d",&choix);
 	
     
-	 }
+	 }while(choix >=7 || choix<=1);
 	 return choix;
 
 }
 
 void choixmenu (int choix)
- 
 { int r,q;
 switch (choix)
  {
