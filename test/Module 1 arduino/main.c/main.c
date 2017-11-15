@@ -35,11 +35,12 @@ void loop() {
   //data = (String)pouls;
   //data += ';';
   //data += (String)temps;
-  //allumage_led(&pouls);
-   
-  Serial.write( 0xff );                                                         
-  Serial.write( (pouls>> 8) & 0xff );                                            
-  Serial.write( pouls & 0xff );
- //Serial.println(pouls);
+  allumage_led(&pouls);
+  
+  //Serial.write( 0xff );                                                         
+  //Serial.write( (pouls>> 8) & 0xff );                                            
+  //Serial.write( pouls & 0xff );
+  Serial.println(pouls);
+  delay(200);
 
 }

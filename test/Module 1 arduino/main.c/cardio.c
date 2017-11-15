@@ -16,10 +16,10 @@ void recolte(int *pouls, int analogIn, int *valmax, int *valmin)
    */
   
   *pouls = analogRead(analogIn);
-  if(*pouls == 35)
-    *pouls *= 2;
-    
-
+  if(*pouls > *valmax)
+    *valmax = *pouls;
+  if(*pouls < *valmin)
+    *valmin = *pouls;
 
   /*if (analogRead(analogIn) !=1023)
   {
