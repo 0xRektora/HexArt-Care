@@ -1,6 +1,8 @@
-<<<<<<< HEAD
 #include <stdio.h>
 #include <stdlib.h>
+#include "donnees.h"
+#include "action.h"
+#include <string.h>
 
 int affichermenu()
 {   int choix;
@@ -19,64 +21,22 @@ int affichermenu()
         printf ("\t\t** 6 ..Rechercher et afficher les max/min de pouls avec leurs temps associé\n");
         printf ("\t\t** 7 ..Quitter l’application\n");
 
-=======
-#include "menu.h"
-#include "action.h"
-int affichermenu()
-{   int choix;
-     	system("color C");
-<<<<<<< HEAD
-	   do
-	 {  
-=======
-	  
-	do {  
->>>>>>> 8b9bae27ce69aeb1471fde086e2d8bd93520fcf6
-	 	printf("%n ** vous devez choisir l'option que vous voulez faire **\n\n"); //choix d'operation 
-	    printf ("\n\n");
-        printf ("\t\t************************************\n");
-        printf ("\t\t**\n");
-        printf ("\t\t** 1 ..Afficher les donnï¿½es dans lï¿½ordre du fichier .csv \n");
-        printf ("\t\t** 2 ..Afficher les donnï¿½es en ordre croissant/dï¿½croissant (selon le temps, selon le pouls)    \n");
-        printf ("\t\t** 3 ..Rechercher et afficher les donnï¿½es pour un temps particulier\n");
-        printf ("\t\t** 4 ..Afficher la moyenne de pouls dans une plage de temps donnï¿½e\n");
-        printf ("\t\t** 5 ..Afficher le nombre de lignes de donnï¿½es actuellement en mï¿½moire\n");
-        printf ("\t\t** 6 ..Rechercher et afficher les max/min de pouls (avec le temps associï¿½)\n");
-        printf ("\t\t** 7 ..Quitter lï¿½application\n");
-    
->>>>>>> dcd022f021ce3a570cc34f0837166d18b1ebb171
         printf ("\t\t**\n");
         printf ("\t\t************************************\n");
 
 
      	 	printf("\n\n ce que vous voulez faire \n\ttapper  (1 ou 2...4)  :   ");
             scanf("%d",&choix);
-<<<<<<< HEAD
 
 
-=======
-	
-    
-<<<<<<< HEAD
-	 }while(choix >=7 || choix<=1);
-	 return choix;
-=======
->>>>>>> dcd022f021ce3a570cc34f0837166d18b1ebb171
 	 } while(choix>=7 && choix<=1);
 	return choix;
->>>>>>> 8b9bae27ce69aeb1471fde086e2d8bd93520fcf6
 
 }
 void choixmenu (int choix )
 
-<<<<<<< HEAD
 { int r,q,choix2;
 switch (choix2)
-=======
-void choixmenu (int choix)
-{ int r,q;
-switch (choix)
->>>>>>> dcd022f021ce3a570cc34f0837166d18b1ebb171
  {
 	case 1:
       afficherdordf(tab, n);
