@@ -1,5 +1,7 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "donnees.h"
-
 
 void remptab (structure tab[], int *n)
 {
@@ -39,6 +41,7 @@ void remptab (structure tab[], int *n)
      while(record != NULL)
      { 
        tab[i].temps = atoi(record) ; //here you can put the record into the array as per your requirement.  
+       
        record = strtok(NULL,";");
         x=atoi(record);
         record = strtok(NULL,";"); 

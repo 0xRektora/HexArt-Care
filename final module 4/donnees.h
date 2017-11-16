@@ -1,9 +1,6 @@
-
 #ifndef H_MASTRUCTURE
 #define H_MASTRUCTURE
-
-
-
+// declaration de notre structure
 typedef struct structure
 { 
  
@@ -11,6 +8,7 @@ typedef struct structure
   int frequencecard;
 
 }structure;
-#endif
 
+#endif
+//declaration de notre  prototype 
 void remptab (structure tab[], int *n);
