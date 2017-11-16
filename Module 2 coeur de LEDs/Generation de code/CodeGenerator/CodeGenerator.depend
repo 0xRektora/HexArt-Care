@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1510836217 source:h:\exia\projets\projet 1 ue.1\code\hexart-care\module 2 coeur de leds\generation de code\codegenerator\main.c
+	<stdio.h>
+	<stdlib.h>
+	"menu.h"
+	"generationCode.h"
+
+1510830810 h:\exia\projets\projet 1 ue.1\code\hexart-care\module 2 coeur de leds\generation de code\codegenerator\menu.h
+
+1510836215 source:h:\exia\projets\projet 1 ue.1\code\hexart-care\module 2 coeur de leds\generation de code\codegenerator\menu.c
+	"menu.h"
+
+1510835598 source:h:\exia\projets\projet 1 ue.1\code\hexart-care\module 2 coeur de leds\generation de code\codegenerator\generationcode.c
+	"generationCode.h"
+
+1510830786 h:\exia\projets\projet 1 ue.1\code\hexart-care\module 2 coeur de leds\generation de code\codegenerator\generationcode.h
+	<stdlib.h>
+	<stdio.h>
+	<stdio.h>
+
