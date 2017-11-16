@@ -34,7 +34,8 @@ void afficherdordf(structure t[], int n) // Afficher les données dans l’ordre du
    printf("\n\t temps de la fin du calcul \n\t :");
    scanf("%d",&tmax);
  	for(i=0;i<n;i++) // pour connaitre la position de la case du debut de l'interval
-	{if (t[i].temps>=tmin-1 && t[i].temps<=tmin+1) 
+	{
+	 if (t[i].temps>=tmin-1 && t[i].temps<=tmin+1) 
 	 k=i;
 	}
 	  
@@ -155,9 +156,10 @@ void afficherdordf(structure t[], int n) // Afficher les données dans l’ordre du
 	scanf("%d",&tp);
 	
 	for(i=0;i<n;i++) // pour savoir l'indice de la case voulu par le temps
-	{ in=2;
+	{ 
+	 
 	  
-	 if (t[i].temps>=tp-in && t[i].temps<=tp+in) 
+	 if (t[i].temps>=tp-3 && t[i].temps<=tp+2) 
 	 k=i;
 	}
 	   
