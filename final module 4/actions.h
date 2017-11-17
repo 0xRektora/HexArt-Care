@@ -1,4 +1,5 @@
-
+ #include "donnees.h"
+ 
 void afficherdordf(structure t[], int n);
 void affichpotdo(structure t[],int n );
 void affichdordrecroistemps( structure t[], int n);

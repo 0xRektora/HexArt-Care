@@ -1,8 +1,7 @@
-
 #include <stdio.h>
 #include <stdlib.h>
-#include "donnees.c"
-#include"action.h"
+#include "actions.h"
+#include "donnees.h"
 
 
 
@@ -27,29 +26,30 @@ void afficherdordf(structure t[], int n) // Afficher les données dans l’ordre du
  
  
  
- void affichpotdo( structure t[] , int n ) // cette foction elle est manquante !!!!!!
+ void affichpotdo( structure t[] , int n ) // fonction qui Recherche et affiche les données pour un temps particulier
  { int tmin,somme,tmax,k,w,v,i;
   int moy;
    printf("veuilliez limiter votre interval \n\t temps du debut de calcule :\n\t :");
    scanf("%d",&tmin);
    printf("\n\t temps de la fin du calcul \n\t :");
    scanf("%d",&tmax);
- 	for(i=0;i<n;i++)
-	{if (tmin==t[i].temps) 
+ 	for(i=0;i<n;i++) // pour connaitre la position de la case du debut de l'interval
+	{
+	 if (t[i].temps>=tmin-1 && t[i].temps<=tmin+1) 
 	 k=i;
 	}
 	  
- 	for(i=0;i<n;i++)
-	{if (tmax==t[i].temps) 
+ 	for(i=0;i<n;i++) // pour connaitre la position de la case a la fin de l'interval
+	{if (t[i].temps>=tmax-1 && t[i].temps<=tmax+1) 
 	 v=i;
 	}
 	w=0;
 	somme=0;
-	for(i=k;i<=v;i++)
+	for(i=k;i<=v;i++) 
 	{ somme =somme+t[i].frequencecard;
 	   w=w+1;
 	}  
-	  moy=somme/w;
+	  moy=somme/w; // calcul de la moyenne 
 	  printf("\n\n\t\t\tla moyenne de pouls dans l'interval est :\n\t\t\t\t\t %d\n\n\n\n\n\n",moy);
  }
  
@@ -58,7 +58,7 @@ void afficherdordf(structure t[], int n) // Afficher les données dans l’ordre du
  { int i,q,temp;
    for(i=0;i<n;i++)
    {
-     for(q=i+1;q<=n;q++)
+     for(q=i+1;q<=n;q++) // faire le tri
       {if (t[i].temps>t[q].temps) 
          {temp=t[i].temps;
            t[i].temps=t[q].temps;
@@ -66,7 +66,7 @@ void afficherdordf(structure t[], int n) // Afficher les données dans l’ordre du
 		 }
 	  }
    }
-    printf(" LE TEMPS : ");
+    printf(" LE TEMPS : "); // laffichage du tableau 
  	for(i=0;i<n;i++)
  	  {printf(" \t%d |",t[i].temps);
 	  }
@@ -80,7 +80,7 @@ void afficherdordf(structure t[], int n) // Afficher les données dans l’ordre du
  { int i,q,temp;
    for(i=0;i<n;i++)
    {
-     for(q=i+1;q<n;q++)
+     for(q=i+1;q<n;q++) //le tri 
       {if (t[i].temps<t[q].temps) 
          {temp=t[i].temps;
            t[i].temps=t[q].temps;
@@ -88,7 +88,7 @@ void afficherdordf(structure t[], int n) // Afficher les données dans l’ordre du
 		 }
 	  }
    }
-    printf(" LE TEMPS : ");
+    printf(" LE TEMPS : "); // laffichage du tableau 
  	for(i=0;i<n;i++)
  	  {printf(" \t%d |",t[i].temps);
 	  }
@@ -150,22 +150,23 @@ void afficherdordf(structure t[], int n) // Afficher les données dans l’ordre du
 	  }
  }
  
- void affichuntempspar(structure t[], int n ) //une fonction Rechercher et afficher les données pour un temps particulier
- { int tp,i,k;
+ void affichuntempspar(structure t[], int n ) //une fonction Recherche et affiche les données pour un temps particulier
+ { int tp,i,k,in;
     printf("veuillez donnez un temps particulier en ms \n\t:");
 	scanf("%d",&tp);
 	
-	for(i=0;i<n;i++)
-	{if (tp==t[i].temps) 
+	for(i=0;i<n;i++) // pour savoir l'indice de la case voulu par le temps
+	{ 
+	 
+	  
+	 if (t[i].temps>=tp-3 && t[i].temps<=tp+2) 
 	 k=i;
 	}
 	   
-	 printf("\nle pouls dans %d ms est de \n\t : %d\n\n",tp,t[k].frequencecard);  
+	 printf("\nle pouls dans %d ms est de \n\t : %d\n\n",tp,t[k].frequencecard);  // on affiche le pouls au moment donner 
 }
   
-  void affichnbdelincsv (int n) //une fonction Afficher le nombre de lignes de données actuellement en mémoire
-  { printf("le nombre de ligne est de \n\t :%d\n\n\n",n);
-  }
+ 
   void affichermin (structure t[], int n)   //Rechercher et afficher les min de pouls (avec le temps associé)
   { int min,tmin,i;
     min=t[0].frequencecard;
@@ -193,4 +194,7 @@ void afficherdordf(structure t[], int n) // Afficher les données dans l’ordre du
         tmax=t[i].temps;
 	}
 	printf("le min de pouls est de \n\t :%d \nson temps est \n\t :%d",max,tmax);
+  }
+   void affichnbdelincsv (int n) //une fonction Afficher le nombre de lignes de données actuellement en mémoire
+  { printf("le nombre de ligne est de \n\t :%d\n\n\n",n);
   }

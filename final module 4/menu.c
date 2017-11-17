@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include"donnees.h"
-#include"action.h"
-#include"menu.h"
+#include "menu.h"
+#include "donnees.h"
+#include "actions.h"
 
 
-int affichermenu()
+
+  int affichermenu() // fonction qui affiche le menu et retourne une valeur du choix de l'utilisateur 
 {   int choix;
      	system("color C");
 
@@ -19,14 +20,14 @@ int affichermenu()
         printf ("\t\t** 3 ..Rechercher et afficher les donnees pour un temps particulier\n");
         printf ("\t\t** 4 ..Afficher la moyenne de pouls dans une plage de temps donnee\n");
         printf ("\t\t** 5 ..Afficher le nombre de lignes de donnees actuellement en memoire\n");
-        printf ("\t\t** 6 ..Rechercher et afficher les max/min de pouls avec leurs temps associé\n");
-        printf ("\t\t** 7 ..Quitter l’application\n");
+        printf ("\t\t** 6 ..Rechercher et afficher les MAX/MIN de pouls avec leurs temps associe\n");
+        printf ("\t\t** 7 ..Quitter l'application\n");
 
         printf ("\t\t**\n");
         printf ("\t\t************************************\n");
 
 
-     	 	printf("\n\n ce que vous voulez faire \n\ttapper  (1 ou 2...4)  :   ");
+     	 	printf("\n\n ce que vous voulez faire \n\ttapper  (1 ou 2...7)  :   ");
             scanf("%d",&choix);
 
 
@@ -34,7 +35,7 @@ int affichermenu()
 	return choix;
 
 }
-void choixmenu (int choix, structure t[], int n )
+void choixmenu (int choix, structure t[], int n ) // fonction qui va mettre en relation le choix et les fonction 
 
 { int r,q,choixc,v,b;
 switch (choix)
@@ -47,9 +48,9 @@ switch (choix)
 	   break;
 	case 2:
 		  system ("cls");
-		 choixc=affichermenub();
+		 choixc=affichermenub(); // on fait appel a une fonction qui fait affichage d'un deuxiemme menu
 		 system ("cls");
-	     choixmenu2 (choixc,  t, n );
+	     choixmenu2 (choixc,  t, n ); // fonction qui va mettre en relation le choix et les fonction 
        break;
 	case 3:
 	  system ("cls");
@@ -67,9 +68,9 @@ switch (choix)
 	   break;
 	 case 6:
 	 	system ("cls");
-	 	choixc=affichermenuc();
+	 	choixc=affichermenuc(); // on fait appel a une fonction qui fait affichage d'un deuxiemme menu
 	 	system ("cls");
-	    choixmenu3 (choixc, t,n );
+	    choixmenu3 (choixc, t,n ); // fonction qui va mettre en relation le choix et les fonction 
 	 	
 	 	break;
 
@@ -78,7 +79,7 @@ switch (choix)
 	 	printf("\n\n\n\t\t\t vous allez quitter le prgramme \n\n\t\t\t\t       MERCI:)\n\n\n\n");
 	 	for (r=1;r<=1;r++)
 		 { // pour gagner du temps avant la fermmiture du programme
-            for (q=0;q<=800000000;q++);
+            for (q=0;q<=2000000000;q++);
 
          }
 	 	system ("cls");
@@ -160,7 +161,7 @@ int affichermenuc()
         printf ("\t\t************************************\n");
         printf ("\t\t**\n");
         printf ("\t\t** 1 ..Rechercher et afficher les max de pouls avec leurs temps associe\n");
-        printf ("\t\t** 2 ..Rechercher et afficher les min de pouls avec leurs temps associé\n");
+        printf ("\t\t** 2 ..Rechercher et afficher les min de pouls avec leurs temps associe\n");
         printf ("\t\t**\n");
         printf ("\t\t************************************\n");
 
@@ -196,11 +197,36 @@ switch (choix2)
  }
 
 }
-   
- void afficherbarr()
+    
+ void afficherbarr() // fonction pour afficher une barre de chargemenet 
  { int v,b;
        for (v=1;v<18;v++)
 	   {for (b=0;b<60000000;b++);
             printf ("%c",219);
+            
        }  
  } 
+  void afficherdebut()
+  
+{ int r,q;
+ system("color C");
+
+  for (r=1;r<=1;r++) {
+      for (q=0;q<=800000000;q++);
+   printf("\n\n\t\t\t\t    PROJET FONDAMENTEAUX SCIENTIQUE");
+                     }
+  
+   for (r=1;r<=1;r++) {
+      for (q=0;q<=800000000;q++);
+   printf("\n\n\n\t\t\t\tUN COEUR QUI BAT AU RYTHME DE VOS REVES !");
+                    }
+    
+     for (r=1;r<=1;r++) {
+      for (q=0;q<=800000000;q++);
+          printf("\n\n\n\t\t\t\t\t        BIENVENUE : \n\n");
+                    }
+
+} 
+   
+   
+   
