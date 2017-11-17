@@ -1,7 +1,7 @@
 #include "menu.h"
 
 //Fonction qui crée les fichiers qui permettent de gérer l'affichage des LEDs
-void led_affichage(unsigned int *choix)
+void led_affichage(int *choix, int *led)
 {
     //Affichage du menu
     do
@@ -18,6 +18,11 @@ void led_affichage(unsigned int *choix)
         printf("                          [-]--------------------------------------------------------[-]\n\n");
         printf("                                                        [+] ");
         scanf("%d", choix);
+        if(*choix == 4)
+        {
+        printf("                                                        [+] Choisissez une LED :");
+            scanf("%d", led);
+        }
     }while(choix < 1 && choix > 6);
 }
 

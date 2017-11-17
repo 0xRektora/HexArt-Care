@@ -2,5 +2,6 @@
 #define PARAM_H
 
 #define FUNCTION
+#define LED
 
 #endif

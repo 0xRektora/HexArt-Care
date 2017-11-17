@@ -1,7 +1,7 @@
 #include "generationCode.h"
 
 //Fonction qui génére le fichier param.h
-void draw(int *choix)
+void draw(int *choix, int *led)
 {
     //Ouverture des fichier
     FILE *in = fopen("param.txt", "r");
@@ -9,6 +9,7 @@ void draw(int *choix)
     char mystr[50];
     //Valeur qu'on doit chercher afin d'ajouter le choix d'utilisateur du mode d'affichage
     char cmp[] = "#define FUNCTION\n";
+    char cmp2[] = "#define LED\n";
     while(fgets(mystr, 50, in) != NULL )
     {
         //Si la valeur est trouvé on ajoute le choix de l'utilisateur
@@ -18,6 +19,16 @@ void draw(int *choix)
             mystr[strlen(mystr)-1] = ' ';
             char choice[12];
             sprintf(choice, "%d", *choix);
+            strcat(mystr, choice);
+            strcat(mystr, "\n");
+            fputs(mystr, out);
+        }
+        else if(strcmp(mystr, cmp2) == 0)
+        {
+
+            mystr[strlen(mystr)-1] = ' ';
+            char choice[12];
+            sprintf(choice, "%d", *led);
             strcat(mystr, choice);
             strcat(mystr, "\n");
             fputs(mystr, out);

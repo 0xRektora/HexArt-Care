@@ -5,6 +5,6 @@
 #include <stdio.h>
 #include <stdio.h>
 
-void draw(int *choix);
+void draw(int *choix, int *led);
 
 #endif // GENERATIONCODE_H_INCLUDED
