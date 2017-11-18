@@ -55,7 +55,7 @@ void afficherdordf(structure t[], int n) // Afficher les données dans l’ordre du
  
   
   void affichdordrecroistemps(structure t[], int n) // Afficher les données en ordre croissant selon le temps
- { int i,q,temp;
+ { int i,q,temp,temp1;
    for(i=0;i<n;i++)
    {
      for(q=i+1;q<=n;q++) // faire le tri
@@ -63,6 +63,11 @@ void afficherdordf(structure t[], int n) // Afficher les données dans l’ordre du
          {temp=t[i].temps;
            t[i].temps=t[q].temps;
             t[q].temps=temp;
+            
+            
+            temp1=t[i].frequencecard;
+            t[i].frequencecard=t[q].frequencecard;
+            t[q].frequencecard=temp1;
 		 }
 	  }
    }
@@ -77,7 +82,7 @@ void afficherdordf(structure t[], int n) // Afficher les données dans l’ordre du
 	  }
  }
  void affichordredecroistemp(structure t[], int n) // Afficher les données en ordre decroissant selon le temps
- { int i,q,temp;
+ { int i,q,temp,temp1;
    for(i=0;i<n;i++)
    {
      for(q=i+1;q<n;q++) //le tri 
@@ -85,6 +90,10 @@ void afficherdordf(structure t[], int n) // Afficher les données dans l’ordre du
          {temp=t[i].temps;
            t[i].temps=t[q].temps;
             t[q].temps=temp;
+            
+            temp1=t[i].frequencecard;
+            t[i].frequencecard=t[q].frequencecard;
+            t[q].frequencecard=temp1;
 		 }
 	  }
    }
@@ -102,7 +111,7 @@ void afficherdordf(structure t[], int n) // Afficher les données dans l’ordre du
  
  
  void affichdordrecroispouls(structure t[], int n) // Afficher les données en ordre croissant selon le pouls
- { int i,q,temp;
+ { int i,q,temp,temp1;
    for(i=0;i<n;i++)
    {
      for(q=i+1;q<n;q++)
@@ -110,6 +119,10 @@ void afficherdordf(structure t[], int n) // Afficher les données dans l’ordre du
          {temp=t[i].frequencecard;
            t[i].frequencecard=t[q].frequencecard;
             t[q].frequencecard=temp;
+            
+            temp1=t[i].frequencecard;
+            t[i].frequencecard=t[q].frequencecard;
+            t[q].frequencecard=temp1;
 		 }
 	  }
    }
@@ -128,7 +141,7 @@ void afficherdordf(structure t[], int n) // Afficher les données dans l’ordre du
  
  
  void affichordredecroispouls(structure t[], int n) // Afficher les données en ordre decroissant selon le pouls
- { int i,q,temp;
+ { int i,q,temp,temp1;
    for(i=0;i<n;i++)
    {
      for(q=i+1;q<n;q++)
@@ -136,6 +149,10 @@ void afficherdordf(structure t[], int n) // Afficher les données dans l’ordre du
          {temp=t[i].frequencecard;
            t[i].frequencecard=t[q].frequencecard;
             t[q].frequencecard=temp;
+            
+            temp1=t[i].frequencecard;
+            t[i].frequencecard=t[q].frequencecard;
+            t[q].frequencecard=temp1;
 		 }
 	  }
    }
