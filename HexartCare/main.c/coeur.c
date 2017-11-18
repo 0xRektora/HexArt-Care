@@ -3,6 +3,7 @@
 #include "param.h"
 
 //allumage de toutes les LEDs selon le rythme des battements du coeur
+int m_switch = 1;
 void allumage_led(int *pouls)
 {
     switch(FUNCTION)
@@ -29,29 +30,47 @@ void allumage_led(int *pouls)
          break;
     }
 }
+//Fonction qui détecte si les LEDs sont allumées ou éteint
+void switch_switch()
+{
+  if(m_switch)
+  {
+    m_switch = 0;
+  }
+  else
+  {
+    m_switch = 1;
+  }
+}
 
 //Fonction d'allumage des LEDs en mode blink
 void blink_mode(int *pouls)
 {
     int i;
-    for(i = 2; i <= 11 ; i++)
+    if(m_switch)
     {
-      if(*pouls >400)
-      {
+    for(i = 2; i <= 11 ; i++)
+    {  
         digitalWrite(i, HIGH);
-      }
-      else
-      {
+    
+    }
+    }
+    else
+    {
+      for(i = 2; i <= 11 ; i++)
+    {  
         digitalWrite(i, LOW);
-      }
-        
+    
+    }
     }
 }
 //Fonction d'allumage d'une LED sur 2
 void one_led_mode(int *pouls)
 
 {
+  
   int i;
+  
   for(i = 2 ; i <= 11 ; i++)
   {
     if(i == 2)
@@ -61,7 +80,7 @@ void one_led_mode(int *pouls)
       digitalWrite(i, HIGH);
     }
   }
-  delay(100);
+
   for(i = 2 ; i <= 11 ; i++)
   {
     if(i == 2)
@@ -72,7 +91,7 @@ void one_led_mode(int *pouls)
     }
   }
 
-  delay(100);
+
 
   
 
@@ -241,13 +260,10 @@ void two_led_mode(int *pouls)
 //Fonction d'allumage d'une LED choisis
 void select_led_mode()
 {
-  digitalWrite(LED, HIGH);
+  digitalWrite(LED+1, HIGH);
   delay(100);
-  digitalWrite(LED, LOW);
+  digitalWrite(LED+1, LOW);
   delay(100);
-  digitalWrite(LED, HIGH);
-  delay(100);
-  digitalWrite(LED, LOW);
 }
 
 //Fonction d'allumage des LEDs en mode chenille
@@ -288,6 +304,8 @@ void flexy_mode(int *pouls)
 {
 
    int i;
+   if(m_switch)
+   {
    for( i = 2 ; i <= 11 ; i++)
   {
     if(i == 2)
@@ -312,6 +330,8 @@ void flexy_mode(int *pouls)
       
     }
   }
+   }
+   else{
   for( i = 11 ; i >= 2 ; i--)
   {
     if(i == 2)
@@ -336,4 +356,5 @@ void flexy_mode(int *pouls)
       
     }
 }
+   }
 }

@@ -7,8 +7,8 @@
 extern "C" {
 #endif
 
-void recolte(int *pouls, int analogIn);
-void calcule(long int *temps);
+int recolte(int *pouls, int analogIn);
+void calcule(unsigned long *temps);
 
 #ifdef __cplusplus
 }

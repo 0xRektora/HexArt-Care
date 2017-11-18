@@ -6,6 +6,7 @@ extern "C" {
 #endif
 
 void allumage_led(int *pouls);
+void switch_switch();
 void blink_mode(int *pouls);
 void one_led_mode(int *pouls);
 void two_led_mode(int *pouls);

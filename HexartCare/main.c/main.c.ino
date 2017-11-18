@@ -10,9 +10,14 @@ Version 0.1
 
 int pouls = 100;
 int t = 0;
+String msg = "";
+int moyenne_val = 0;
+boolean moyenne_lock = true;
 int valmax = 0;
 int valmin = 1023;
-long int temps = 0; // temps en ms calculé depuis le démarrage du programme arduino
+unsigned long temps = 0; // temps en ms calculé depuis le démarrage du programme arduino
+unsigned long tmp_temps = 500; // variable temporaire qui gardera en mémoire le temps précédent
+boolean lock = false;
 String data = ""; //Données à envoyer
 int analogIn = 0; // entrée digitale arduino utilisée pour récupérer les données
 //Variables utilisées
@@ -31,34 +36,62 @@ void setup() {
   
 //Main program, récupération et envoi de données 
 void loop() {
-  recolte(&pouls, analogIn);
-  if(t != 100)
+
+  int i;
+
+    recolte(&pouls, analogIn);
+    pouls = map(pouls, 0, 1023, 0, 255);
+      if(pouls > valmax)
+        valmax = pouls;
+      
+    if(pouls < valmin)
+      valmin = pouls;
+  
+  if(moyenne_lock && millis() < 2000)
   {
-    t++;
+    if(millis() == 2000)
+      Serial.println("Please wait 2 seconds");
+    moyenne_val = valmax-valmin;
+    if(millis()> 2000)
+    {
+      moyenne_lock = false;
+    }
   }
-  else
-  {
-    t = 0;
-    valmax = 0;
-    valmin = 1023;
-  }
-  //calcule(&temps);
-  //data = (String)pouls;
-  //data += ';';
-  //data += (String)temps;
- 
-  //Serial.write( 0xff );                                                         
-  //Serial.write( (pouls>> 8) & 0xff );                                            
-  //Serial.write( pouls & 0xff );
-  //allumage_led(&pouls);
-  if(pouls >= valmax)
-    valmax = pouls;
-  if(pouls <=valmin)
-    valmin = pouls;
- //Serial.println(valmax);
- if(pouls == 1023)
- {
-  Serial.println(pouls);
- }
+
+
+  
+
+   if(millis()-temps > 2000 )
+    {
+      lock = true;
+      //Serial.println("lock = true");
+      calcule(&temps);
+    }
+
+   
+ // Serial.println("Moyenne val " + (String)moyenne_val);
+ Serial.println("Pouls  "+ (String)(pouls));
+  if(valmax-valmin > moyenne_val)
+     {
+     if(lock)
+   {
+      
+      allumage_led(&pouls);
+     Serial.println("pouls ! ");
+      switch_switch();
+      valmax = 0;
+      valmin = 1023;
+      calcule(&temps);
+      lock = false;
+      Serial.println("Lock = false");
+      }
+      
+      
+   }
+
+   delay(2);
+ //Serial.write( 0xff );                                                         
+ //Serial.write( (pouls>> 8) & 0xff );                                            
+ //Serial.write( pouls & 0xff );
 
 }
